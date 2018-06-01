@@ -2,6 +2,7 @@ const express = require('express')
 const hbs = require('hbs')
 const fs = require('fs')
 
+const port = process.env.PORT || 3000
 const app = express()
 
 hbs.registerPartials(__dirname + '/views/partials')
@@ -54,6 +55,6 @@ app.get('/bad', function(req, res){
         errorMessage: 'Bad request sent!'
     })
 })
-app.listen(3000, () => {
-    console.log(`Server has been started in port 3000!`)
+app.listen(port, () => {
+    console.log(`Server has been started in port: ${port}!`)
 })
