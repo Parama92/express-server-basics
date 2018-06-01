@@ -55,6 +55,12 @@ app.get('/bad', function(req, res){
         errorMessage: 'Bad request sent!'
     })
 })
+app.get('/projects', function(req, res){
+    res.render('projects.hbs', {
+        pageTitle : 'Projects Page',
+        message : 'See all projects here'
+    })
+})
 app.listen(port, () => {
     console.log(`Server has been started in port: ${port}!`)
 })
